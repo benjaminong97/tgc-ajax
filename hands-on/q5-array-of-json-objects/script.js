@@ -22,6 +22,17 @@ async function run() {
         let bigBoss = document.querySelector('#all-users')
         bigBoss.appendChild(ul)
     }) 
+    document.querySelector('#btnSearch')
+        .addEventListener('click', function(){
+            inputText = document.querySelector('#search').value
+            inputValue = parseInt(inputText) - 1
+            console.log(inputValue)
+            resultBox = document.querySelector('#search-result')
+            f2Name = usersData[parseInt(inputValue)].firstName
+            console.log(f2Name)
+            l2Name = usersData[parseInt(inputValue)].lastName
+            resultBox.innerHTML = f2Name + " " + l2Name
+        })
 
 }
 run()
